@@ -1,6 +1,6 @@
 # This file uses the proto buffer format defined by google.
 #   For now it contains a minimal setup for compiling with
-#   avr-gcc on a linux platform. You might have to adjust
+#   avr-gcc on a Windows platform. You might have to adjust
 #   the toolpath values to point to the executables provided by
 #   your system. The same is true for the include path.
 #   These wiki articles should be helpful in case you want to
@@ -16,19 +16,19 @@ minor_version: "0"
 default_target_cpu: "avr"
 
 
-#  If i got it correctly this setting is used to make the avr-gnu-toolchain-linux_x86_64 the
+#  If i got it correctly this setting is used to make the avr-gnu-toolchain-mingw_x86_64 the
 # default toolchain when using avr as cpu. Documentation about this is scarce.
 
 default_toolchain {
     cpu: "avr"
-    toolchain_identifier: "avr-gnu-toolchain-linux_x86_64"
+    toolchain_identifier: "avr-gnu-toolchain-mingw_x86_64"
     }
 
 toolchain {
 # all these first options here are arbitrary but required fields
 # as far as i can see they serve to identify the respectively refer to the toolchain.
-    toolchain_identifier: "avr-gnu-toolchain-linux_x86_64" # arbitrary name, has to match the name in default_toolchain
-    host_system_name: "x86_64-pc-linux-gnu"
+    toolchain_identifier: "avr-gnu-toolchain-mingw_x86_64" # arbitrary name, has to match the name in default_toolchain
+    host_system_name: "x86_64-pc-mingw-gnu"
     target_system_name: "avr"
     target_cpu: "avr"
     target_libc: "avr"
@@ -47,58 +47,58 @@ toolchain {
 # An example for this is given in the links at the top.
     tool_path {
         name: "gcc"
-        path: "/usr/bin/avr-gcc"
+        path: "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-gcc"
     }
 
     tool_path {
         name: "compat-ld"
-        path: "/usr/bin/avr-ld"
+        path: "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-ld"
     }
 
     tool_path {
         name: "cpp"
-        path: "/usr/bin/avr-cpp"
+        path: "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-cpp"
     }
 
     tool_path {
         name: "ar"
-        path: "/usr/bin/avr-ar"
+        path: "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-ar"
     }
 
     tool_path {
         name: "gcov"
-        path: "/usr/bin/avr-gcov"
+        path: "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-gcov"
     }
 
     tool_path {
         name: "ld"
-        path: "/usr/bin/avr-ld"
+        path: "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-ld"
     }
 
     tool_path {
         name: "nm"
-        path: "/usr/bin/avr-nm"
+        path: "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-nm"
     }
 
     tool_path {
         name: "objcopy"
-        path: "/usr/bin/avr-objcopy"
+        path: "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-objcopy"
     }
 
     tool_path {
         name: "objdump"
-        path: "/usr/bin/avr-objdump"
+        path: "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-objdump"
     }
 
     tool_path {
         name: "strip"
-        path: "/usr/bin/avr-strip"
+        path: "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avr-strip"
     }
 
     compiler_flag: "-Wall"
     compiler_flag: "-std=gnu99"
 
-    cxx_builtin_include_directory: "/usr/lib/gcc/avr/7.3.0/include"
-    cxx_builtin_include_directory: "/usr/lib/gcc/avr/7.3.0/include-fixed"
-    cxx_builtin_include_directory: "/usr/avr/include"
+    cxx_builtin_include_directory: "C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include"
+    cxx_builtin_include_directory: "C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include-fixed"
+    cxx_builtin_include_directory: "C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include"
  }
