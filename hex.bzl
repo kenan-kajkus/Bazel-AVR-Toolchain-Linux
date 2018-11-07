@@ -41,6 +41,6 @@ def avr_unity_copts():
 
 def avr_minimal_copts():
   return select({
-      "@AVR_Toolchain//:avr-config": ["-mmcu=$(MCU)", "-O2"],
+      "@AVR_Toolchain//:avr-config": ["-mmcu=$(MCU)"],
       "//conditions:default": [],
   })
