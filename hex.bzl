@@ -15,7 +15,7 @@ def avr_cmock_copts():
                                       "-DCMOCK_MEM_SIZE=512",
                                       "-DCMOCK_MEM_STATIC",
                                       "-mmcu=$(MCU)",
-                                      "-O2"],
+                                      "-Os"],
       "//conditions:default": [],
   })
 
@@ -24,7 +24,7 @@ def avr_cexception_copts():
         "@AVR_Toolchain//:avr-config": ["-DCEXCEPTION_NONE=0x00",
                                         "-DEXCEPTION_T=uint8_t",
                                         "-mmcu=$(MCU)",
-                                        "-O2"],
+                                        "-Os"],
         "//conditions:default": [],
     })
 
@@ -36,12 +36,12 @@ def avr_unity_copts():
             "-DUNITY_OUTPUT_CHAR(a)=UnityOutput_write(a)",
             "-DUNITY_OUTPUT_START()=UnityOutput_init(9600)",
             "-include stddef.h",
-            "-O2",],
+            "-Os",],
         "//conditions:default": [],
     })
 
 def avr_minimal_copts():
   return select({
-      "@AVR_Toolchain//:avr-config": ["-mmcu=$(MCU)"],
+      "@AVR_Toolchain//:avr-config": ["-mmcu=$(MCU)", "-Os"],
       "//conditions:default": [],
   })
