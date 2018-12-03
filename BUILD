@@ -13,7 +13,8 @@ cc_toolchain_suite(
     name = "toolchain",
     toolchains = {
         # this line maps the pair <cpu>|<compiler> to a <cc_toolchain rule>
-        "avr|gcc": ":cc-compiler-avr-gcc"
+        "avr|gcc": ":cc-compiler-avr-gcc",
+        "avr": ":cc-compiler-avr-gcc"
     }
 )
 
