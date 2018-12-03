@@ -21,6 +21,7 @@ filegroup(name = "empty")
 
 cc_toolchain(
     name = "cc-compiler-avr-gcc", # is referred in the toolchain_suite above
+    toolchain_identifier = "cc-compiler-avr-gcc",
     all_files = ":empty",
     compiler_files = ":empty",
     cpu = "avr", # chooses the compiler to use (compiler is defined in the CROSSTOOLS file)
